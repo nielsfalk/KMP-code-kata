@@ -2,6 +2,10 @@
 
 Kotlin Multiplatform Library
 
+## Run jvm test
+
+`./gradlew shared:cleanJvmTest shared:jvmTest`
+
 ### Publish to MavenCentral
 
 1) Registering a Sonatype account as described here: 
