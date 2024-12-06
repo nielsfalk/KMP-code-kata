@@ -3,7 +3,6 @@ import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 plugins {
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.android.library)
-    id("convention.publication")
     alias(libs.plugins.kotestMultiplatform)
     alias(libs.plugins.powerAssert)
 }
