@@ -1,10 +1,63 @@
 # KMP code kata
 
-Kotlin Multiplatform Library
+This is a kata bootstrap like [other kata-bootstraps](https://github.com/swkBerlin/kata-bootstraps)
+But with Kotlin Multiplatform, Kotest and PowerAssert.
 
-## Run jvm test
+A failing test
+```kotlin
+class PowerAssertTest : FreeSpec({
+    "Power-assert with Kotest" {
+        val hello = "Hello"
+        val world = "world!"
+        assertEquals(hello.length, world.substring(1, 4).length)
+    }
+})
+```
+
+will have the output:
+```
+de.nielsfalk.kata.PowerAssertTest[jvm] > Power-assert with Kotest[jvm] FAILED
+    org.opentest4j.AssertionFailedError: 
+    assertEquals(hello.length, world.substring(1, 4).length)
+                 |     |       |     |               |
+                 |     |       |     |               3
+                 |     |       |     orl
+                 |     |       world!
+                 |     5
+                 Hello
+     ==> expected: <5> but was: <3>
+```
+
+## Run Test
+
+### All
+
+`./gradlew clean allTests`
+
+### JVM
 
 `./gradlew shared:cleanJvmTest shared:jvmTest`
+
+### JS
+
+`./gradlew :shared:jsBrowserTest`
+
+### iOS
+
+`./gradlew :shared:cleanIosX64Test :shared:iosX64Test`
+
+### MacOs
+
+`./gradlew :shared:cleanMacosX64Test :shared:macosX64Test`
+
+### Android
+
+`./gradlew :shared:cleanTestDebugUnitTest :shared:testDebugUnitTest`
+
+
+### Wasm
+`./gradlew :shared:cleanWasmJsBrowserTest :shared:wasmJsBrowserTest`
+
 
 ### Publish to MavenCentral
 
