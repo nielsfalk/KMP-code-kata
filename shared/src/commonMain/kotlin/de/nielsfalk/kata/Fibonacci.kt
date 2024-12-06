@@ -1,26 +1,10 @@
 package de.nielsfalk.kata
 
-/**
- * Returns a list of Fibonacci numbers up to the specified count.
- *
- * @param count The number of Fibonacci numbers to generate.
- * @return A list of Fibonacci numbers.
- * @throws IllegalArgumentException if count is less than zero.
- */
-fun getFibonacciNumbers(count: Int): List<Int> {
-    require(count >= 0)
-    val result = mutableListOf<Int>()
+fun fibonacci() = sequence {
+    var terms = 0 to 1
 
-    if (count == 0) return result
-
-    var t1 = 0
-    var t2 = 1
-    for (i in 1..count) {
-        result.add(t1)
-        val sum = t1 + t2
-        t1 = t2
-        t2 = sum
+    while (true) {
+        yield(terms.first)
+        terms = terms.second to terms.first + terms.second
     }
-
-    return result
 }
